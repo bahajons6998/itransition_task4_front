@@ -1,0 +1,28 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Blocked from "./pages/Blocked";
+import Navbar from "./pages/Navbar";
+
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/blocked" element={<Blocked />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
