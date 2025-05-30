@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { baseurl } from '../util/baseurl';
 
 
+
+
+
 const columns = [
     {
         title: 'Name',
@@ -60,12 +63,14 @@ const Dashboard = () => {
             })
             .catch((err) => {
                 console.log(err.response.data)
+                setData([])
+                navigate('/login')
             });
     }
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const onSelectChange = newSelectedRowKeys => {
-        // console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+        console.log('selectedRowKeys changed: ', newSelectedRowKeys);
         setSelectedRowKeys(newSelectedRowKeys);
     };
     const rowSelection = {
@@ -125,6 +130,7 @@ const Dashboard = () => {
 
     async function Unblock() {
         const token = localStorage.getItem('token');
+
         axios({
             method: 'PUT',
             url: `${baseurl}/api/users/unblock`,
