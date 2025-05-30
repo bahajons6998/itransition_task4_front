@@ -56,7 +56,6 @@ const Dashboard = () => {
             headers: token ? { Authorization: `Bearer ${token}`, } : {}
         })
             .then((res) => {
-                console.log(res)
                 setData(res.data)
             })
             .catch((err) => {
@@ -66,7 +65,7 @@ const Dashboard = () => {
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const onSelectChange = newSelectedRowKeys => {
-        console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+        // console.log('selectedRowKeys changed: ', newSelectedRowKeys);
         setSelectedRowKeys(newSelectedRowKeys);
     };
     const rowSelection = {
@@ -116,7 +115,6 @@ const Dashboard = () => {
             data: selectedRowKeys
         })
             .then((res) => {
-                console.log(res)
                 notify(res?.data?.message);
                 get_users()
             })
@@ -134,7 +132,7 @@ const Dashboard = () => {
             data: selectedRowKeys
         })
             .then((res) => {
-                console.log(res)
+                notify(res?.data?.message);
                 get_users()
             })
             .catch((err) => {
@@ -151,7 +149,7 @@ const Dashboard = () => {
             data: selectedRowKeys
         })
             .then((res) => {
-                console.log(res)
+                notify(res?.data?.message);
                 get_users()
             })
             .catch((err) => {

@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Blocked from "./pages/Blocked";
 import Navbar from "./pages/Navbar";
+import NoFound from "./pages/NoFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/blocked" element={<Blocked />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<NoFound />} />
 
         </Routes>
       </BrowserRouter>

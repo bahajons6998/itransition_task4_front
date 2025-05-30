@@ -23,10 +23,8 @@ const Login = () => {
       data: values
     })
       .then((res) => {
-        console.log(res)
         localStorage.removeItem('token')
         localStorage.setItem('token', res.data.token)
-        console.log(res?.data?.user?.blocked)
         if (res?.data?.user?.blocked == 1) {
           navigate('/blocked');
         }
@@ -36,7 +34,6 @@ const Login = () => {
       })
       .catch((err) => {
         setError(err?.response?.data)
-        console.log(err?.response?.data)
       });
 
   }

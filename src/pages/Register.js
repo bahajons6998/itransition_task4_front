@@ -14,7 +14,7 @@ const Register = () => {
   const notify = (text) => toast(text, { autoClose: 1000 });
 
   const onFinish = values => {
-    console.log('Received values of form: ', values);
+    // console.log('Received values of form: ', values);
     register(values)
   };
 
@@ -26,16 +26,13 @@ const Register = () => {
       data: values
     })
       .then((res) => {
-        console.log(res);
         notify(res?.data?.message);
-        console.log('31 qator')
         setTimeout(() => {
           navigate('/login');
         }, 1000);
       })
       .catch((err) => {
         setError(err?.response?.data)
-        // console.log(err.response.data)
       });
 
   }
