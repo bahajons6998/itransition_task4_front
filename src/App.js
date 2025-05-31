@@ -8,9 +8,11 @@ import Blocked from "./pages/Blocked";
 import Navbar from "./pages/Navbar";
 import NoFound from "./pages/NoFound";
 
+
 function App() {
   return (
     <div className="App">
+      {console.log(process.env.REACT_APP_BASE_URL)}
       <BrowserRouter>
         <Navbar />
         <Routes>
